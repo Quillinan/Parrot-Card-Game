@@ -19,3 +19,21 @@ body {
   font-size: 56px;
   color: #75b79e;
 }
+
+.card {
+  background-color: #a7e9af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 146px;
+  border-radius: 5px;
+  border: 1px solid #99cea8;
+}
+.card img {
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-top: 24px;
+  margin-bottom: 22px;
+}
