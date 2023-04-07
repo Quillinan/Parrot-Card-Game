@@ -29,6 +29,7 @@ body {
   height: 146px;
   border-radius: 5px;
   border: 1px solid #99cea8;
+  margin-bottom: 34px;
 }
 .card img {
   align-items: center;
