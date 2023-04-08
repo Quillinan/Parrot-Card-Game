@@ -41,15 +41,15 @@ body {
   border: #99cea8 1px solid;
 }
 
-.front-face {
+.up-face {
   transform: rotateY(180deg);
 }
 
-.card:hover .front-face {
+.selected-up-face {
   transform: rotateY(0deg);
 }
 
-.card:hover .back-face {
+.selected-down-face {
   transform: rotateY(-180deg);
 }
 .card img {
@@ -65,4 +65,7 @@ body {
   backface-visibility: hidden;
   transition: all 1s;
   transform-style: preserve-3d;
+}
+.card-not-selected {
+  pointer-events: none;
 }

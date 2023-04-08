@@ -22,13 +22,13 @@ for (let i = 0; i < inputCards; i++) {
   row.innerHTML =
     row.innerHTML +
     `
-  <div class="card" data-test="card">
+  <div class="card" data-test="card" onclick="selectCard(this)">
   
-     <div class="back-face face">
+     <div class="down-face face">
       <img data-test="face-down-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" />
      </div>
 
-     <div class="front-face face">
+     <div class="up-face face">
       <img data-test="face-up-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/${gifsSort[i]}" />
      </div>
 
@@ -47,4 +47,12 @@ while (
   inputCards % 2 !== 0
 ) {
   inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
+}
+
+function selectCard(card) {
+  const turnDown = card.querySelector('.down-face');
+  const turnUp = card.querySelector('.up-face');
+
+  turnDown.classList.add('selected-down-face');
+  turnUp.classList.add('selected-up-face');
 }
