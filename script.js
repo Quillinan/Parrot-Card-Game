@@ -13,7 +13,8 @@ let gifs = [
 
 gifs.sort(comparador);
 
-let gifsSort = gifs.slice(0, inputCards);
+let gifsSort = gifs.slice(0, inputCards / 2);
+gifsSort = gifsSort.concat(gifsSort);
 
 gifsSort.sort(comparador);
 
@@ -39,6 +40,11 @@ function comparador() {
   return Math.random() - 0.5;
 }
 
-while (inputCards === null || inputCards < 4 || inputCards > 14) {
+while (
+  inputCards === null ||
+  inputCards < 4 ||
+  inputCards > 14 ||
+  inputCards % 2 !== 0
+) {
   inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
 }
