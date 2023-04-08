@@ -1,5 +1,7 @@
 let inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
 let row = document.querySelector('.rowCards');
+let cardFlip = false;
+let c = 0;
 
 let gifs = [
   'bobrossparrot.gif',
@@ -49,10 +51,32 @@ while (
   inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
 }
 
-function selectCard(card) {
-  const turnDown = card.querySelector('.down-face');
-  const turnUp = card.querySelector('.up-face');
+function selectCard(selector) {
+  if (selector.classList.contains('selected')) return;
 
-  turnDown.classList.add('selected-down-face');
-  turnUp.classList.add('selected-up-face');
+  if (c === 0) {
+    try1 = selector;
+    try1.classList.add('selected');
+    c++;
+  } else if (c === 1) {
+    try2 = selector;
+    try2.classList.add('selected');
+    c++;
+    setTimeout(verifyCards, 1000);
+  }
+}
+
+function verifyCards() {
+  if (document.querySelectorAll('.selected').length === inputCards) {
+    alert(`Você ganhou`);
+  } else if (
+    try1.querySelector('.up-face img').src !==
+    try2.querySelector('.up-face img').src
+  ) {
+    try1.classList.remove('selected');
+    try2.classList.remove('selected');
+    c = 0;
+  } else {
+    c = 0;
+  }
 }
