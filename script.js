@@ -23,12 +23,12 @@ for (let i = 0; i < inputCards; i++) {
     `
   <div class="card" data-test="card">
   
-     <div class="front-face face">
-      <img data-test="face-up-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" />
+     <div class="back-face face">
+      <img data-test="face-down-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" />
      </div>
 
-     <div class="back-face face">
-      <img data-test="face-down-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/${gifsSort[i]}" />
+     <div class="front-face face">
+      <img data-test="face-up-image" src="projeto__parrots__imagens/Arquivos Úteis - Projeto 04 - Parrot Card Game/${gifsSort[i]}" />
      </div>
 
   </div>
