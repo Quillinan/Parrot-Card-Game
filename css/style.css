@@ -87,3 +87,9 @@ body {
 .card-not-selected {
   pointer-events: none;
 }
+
+@media (max-width: 620px) {
+  .title h1 {
+    font-size: 36px;
+  }
+}
