@@ -20,7 +20,7 @@ body {
   margin-bottom: 47px;
   text-align: center;
 }
-.rowCards {
+.cards {
   display: flex;
   justify-content: center;
   align-items: stretch;

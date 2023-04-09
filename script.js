@@ -1,5 +1,5 @@
 let inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
-let row = document.querySelector('.rowCards');
+let cards = document.querySelector('.cards');
 let moves = 0;
 let tryCounter = 0;
 
@@ -21,9 +21,7 @@ gifsSort = gifsSort.concat(gifsSort);
 gifsSort.sort(comparador);
 
 for (let i = 0; i < inputCards; i++) {
-  row.innerHTML =
-    row.innerHTML +
-    `
+  cards.innerHTML += `
   <div class="card" data-test="card" onclick="selectCard(this)">
   
      <div class="down-face face">
