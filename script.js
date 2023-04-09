@@ -1,7 +1,7 @@
 let inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
 let row = document.querySelector('.rowCards');
-let cardFlip = false;
-let c = 0;
+let moves = 0;
+let tryCounter = 0;
 
 let gifs = [
   'bobrossparrot.gif',
@@ -48,35 +48,39 @@ while (
   inputCards > 14 ||
   inputCards % 2 !== 0
 ) {
-  inputCards = parseInt(prompt('Com quantas cartas você quer jogar?'));
+  inputCards = parseInt(
+    prompt('Com quantas cartas você quer jogar?(Números pares, de 4 a 14)')
+  );
 }
 
 function selectCard(selector) {
   if (selector.classList.contains('selected')) return;
 
-  if (c === 0) {
+  if (tryCounter === 0) {
     try1 = selector;
     try1.classList.add('selected');
-    c++;
-  } else if (c === 1) {
+    tryCounter++;
+    moves++;
+  } else if (tryCounter === 1) {
     try2 = selector;
     try2.classList.add('selected');
-    c++;
+    tryCounter++;
+    moves++;
     setTimeout(verifyCards, 1000);
   }
 }
 
 function verifyCards() {
   if (document.querySelectorAll('.selected').length === inputCards) {
-    alert(`Você ganhou`);
+    alert(`Você ganhou em ${moves} jogadas!`);
   } else if (
     try1.querySelector('.up-face img').src !==
     try2.querySelector('.up-face img').src
   ) {
     try1.classList.remove('selected');
     try2.classList.remove('selected');
-    c = 0;
+    tryCounter = 0;
   } else {
-    c = 0;
+    tryCounter = 0;
   }
 }
